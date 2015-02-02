@@ -9,26 +9,29 @@
     <script src="../../bower_components/lintel-contrib-dropdowns/dist/dropdowns.js"></script>
     <script src="../../dist/navbar.js"></script>
   </head>
-  <body>
+  <body class="has-navbar-left has-navbar-collapsed">
 
-    <nav class="navbar navbar-left">
+    <nav class="navbar navbar-inverse navbar-left">
       <a href="/" class="navbar-brand">
-        <span class="navbar-brand-reverse">
-          <h1 class="navbar-title visible-sr">Lintel</h1>
-          <img class="navbar-logo" src="http://placehold.it/100x35" alt="Logo">
-        </span>
+        <div class="navbar-brand-reverse">
+          <h1 class="navbar-title navbar-tooltip">Lintel</h1>
+          <img class="navbar-logo" src="http://placehold.it/44x40" alt="Logo">
+        </div>
       </a>
       <ul class="navbar-list">
         <li class="active">
-          <a href="#">Home</a>
+          <a href="#">
+            <i>H</i> <span class="navbar-tooltip">Home</span>
+          </a>
         </li>
         <li>
-          <a href="#">Profile</a>
+          <a href="#">
+            <i>P</i> <span class="navbar-tooltip">Profile</span>
+          </a>
         </li>
         <li class="btn-group">
           <a href="#" data-toggle="dropdown" type="button" aria-expanded="false">
-            Dropdown
-            <span class="btn-caret" aria-hidden="true"></span>
+            <i>D</i> <span class="navbar-tooltip">Dropdown <span class="btn-caret" aria-hidden="true"></span></span>
           </a>
           <ul class="dropdown" role="menu">
             <li><a href="#">Action 1</a></li>
@@ -39,13 +42,19 @@
       </ul>
       <ul class="navbar-list navbar-list-right">
         <li>
-          <a href="#" class="btn btn-success btn-sm">Sign Up</a>
+          <a href="#">
+            <i>L</i> <span class="navbar-tooltip">Log In</span>
+          </a>
         </li>
         <li>
-          <a href="#">Log In</a>
+          <a href="#" class="temp-toggle">
+            TOG
+          </a>
         </li>
       </ul>
     </nav>
+
+    <p>Body.</p>
 
   </body>
 </html>

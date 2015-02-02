@@ -7,12 +7,20 @@ $navbar-padding-x:           $cushion-x-md !default;
 
 $navbar-margin-y:            $cushion-y-lg !default;
 
+$navbar-collapsible:         true !default;
 $navbar-logo:                true !default;
 $navbar-height:              50px !default;
+
+$navbar-collapsed-width:     70px !default;
+$navbar-expanded-width:      360px !default;
+
+$navbar-z-index:             $z-index-xl !default;
 
 // List
 $navbar-list-padding-y:      ($navbar-height  - ($font-size-base * $line-height-base)) / 2 !default;
 $navbar-list-padding-x:      $navbar-padding-x !default;
+
+$navbar-list-height:         50px;
 
 // Base
 $navbar-bg:                  $bg-light !default;
