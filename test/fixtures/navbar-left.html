@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../bower_components/lintel/dist/lintel.css">
+    <link rel="stylesheet" href="../../bower_components/lintel-contrib-buttons/dist/buttons.css">
+    <link rel="stylesheet" href="../../bower_components/lintel-contrib-dropdowns/dist/dropdowns.css">
+    <link rel="stylesheet" href="../../dist/navbar.css">
+    <script src="../../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../../bower_components/lintel-contrib-dropdowns/dist/dropdowns.js"></script>
+    <script src="../../dist/navbar.js"></script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-left">
+      <a href="/" class="navbar-brand">
+        <span class="navbar-brand-reverse">
+          <h1 class="navbar-title visible-sr">Lintel</h1>
+          <img class="navbar-logo" src="http://placehold.it/100x35" alt="Logo">
+        </span>
+      </a>
+      <ul class="navbar-list">
+        <li class="active">
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Profile</a>
+        </li>
+        <li class="btn-group">
+          <a href="#" data-toggle="dropdown" type="button" aria-expanded="false">
+            Dropdown
+            <span class="btn-caret" aria-hidden="true"></span>
+          </a>
+          <ul class="dropdown" role="menu">
+            <li><a href="#">Action 1</a></li>
+            <li><a href="#">Action 2</a></li>
+            <li><a href="#">Action 3</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="navbar-list navbar-list-right">
+        <li>
+          <a href="#" class="btn btn-success btn-sm">Sign Up</a>
+        </li>
+        <li>
+          <a href="#">Log In</a>
+        </li>
+      </ul>
+    </nav>
+
+  </body>
+</html>

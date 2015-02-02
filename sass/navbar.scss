@@ -1,0 +1,149 @@
+// Please try to maintain the same code style as outlined here:
+// https://github.com/lintelio/lintel/blob/master/CONTRIBUTING.md
+
+@import 'navbar-vars';
+@import 'navbar-functions';
+@import 'navbar-mixins';
+
+.navbar {
+  @include clearfix;
+  @include navbar-theme(
+    $bg: $navbar-bg,
+    $bg-hover: $navbar-bg-hover,
+    $bg-active: $navbar-bg-active,
+    $border: $navbar-border,
+    $text: $navbar-text,
+    $link: $navbar-link,
+    $link-hover: $navbar-link-hover,
+    $link-active: $navbar-link-active
+  );
+  color: $navbar-text;
+  padding-left: $navbar-padding-x;
+  padding-right: $navbar-padding-x;
+}
+
+
+// Navbar Brand
+// ------------
+%navbar-x {
+  .navbar-brand {
+    display: inline-block;
+    margin-right: $navbar-padding-x;
+    vertical-align: middle;
+  }
+}
+
+
+// Navbar Title
+// ------------
+@if $navbar-logo == true {
+  .navbar-title {
+    @extend .visible-sr;
+  }
+}
+@else {
+  .navbar-title {
+    display: inline;
+    font-size: $font-size-base;
+  }
+}
+
+
+// Navbar Logo
+// -----------
+.navbar-logo {
+  display: block;
+}
+
+
+// Navbar List
+// -----------
+.navbar-list {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    > a {
+      display: block;
+      text-decoration: none;
+
+      &:not(.btn) {
+        padding: $navbar-list-padding-y $navbar-list-padding-x;
+      }
+    }
+  }
+}
+
+%navbar-x .navbar-list {
+  > li {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+%navbar-x {
+  .navbar-list-left {
+    display: inline-block;
+  }
+
+  .navbar-list-right {
+    float: right;
+  }
+}
+
+
+// Navbar Dropdown
+// ---------------
+%navbar-x .dropdown {
+  // background: $navbar-bg;
+  // border-color: $navbar-border;
+  box-shadow: none;
+  margin-top: 1px;
+  border-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+// Navbar Positioning
+// ------------------
+%navbar-y {}
+%navbar-x {}
+
+.navbar-top {
+  @extend %navbar-x;
+  border-bottom: 1px solid $navbar-border;
+}
+
+.navbar-right {
+  @extend %navbar-y;
+  border-left: 1px solid $navbar-border;
+}
+
+.navbar-bottom {
+  @extend %navbar-x;
+  border-top: 1px solid $navbar-border;
+}
+
+.navbar-left {
+  @extend %navbar-y;
+  border-right: 1px solid $navbar-border;
+}
+
+
+// Themes
+// ------
+.navbar-inverse {
+  @include navbar-theme(
+    $bg: $navbar-inverse-bg,
+    $bg-hover: $navbar-inverse-bg-hover,
+    $bg-active: $navbar-inverse-bg-active,
+    $border: $navbar-inverse-border,
+    $text: $navbar-inverse-text,
+    $link: $navbar-inverse-link,
+    $link-hover: $navbar-inverse-link-hover,
+    $link-active: $navbar-inverse-link-active
+  );
+}

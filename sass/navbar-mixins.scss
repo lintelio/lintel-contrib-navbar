@@ -1,0 +1,74 @@
+// Please try to maintain the same code style as outlined here:
+// https://github.com/lintelio/lintel/blob/master/CONTRIBUTING.md
+
+@mixin navbar-theme(
+  $bg: $navbar-bg,
+  $bg-hover: $bg,
+  $bg-active: $bg,
+  $border: $navbar-border,
+  $text: $navbar-text,
+  $link: $navbar-link,
+  $link-hover: $navbar-link-hover,
+  $link-active: $navbar-link-active
+) {
+  background: $bg;
+  border-color: $border;
+  color: $text;
+
+  .navbar-list {
+    > li {
+      > a:not(.btn) {
+        color: $link;
+
+        &:hover,
+        &:focus {
+          @if $bg != $bg-hover {
+            background: $bg-hover;
+          }
+          @if $link != $link-hover {
+            color: $link-hover;
+          }
+        }
+      }
+
+      &.active > a:not(.btn),
+      &.open > a:not(.btn) {
+        background: $bg-active;
+        color: $link-active;
+      }
+    }
+  }
+
+  &%navbar-x .dropdown {
+    background: $bg;
+    border-color: $border;
+
+    > li {
+      > a {
+        color: $link;
+
+        &:hover,
+        &:focus {
+          background: $bg-hover;
+          color: $link-hover;
+        }
+      }
+    }
+  }
+
+  .navbar-top {
+    border-bottom: 1px solid $border;
+  }
+
+  .navbar-right {
+    border-left: 1px solid $border;
+  }
+
+  .navbar-bottom {
+    border-top: 1px solid $border;
+  }
+
+  .navbar-left {
+    border-right: 1px solid $border;
+  }
+}

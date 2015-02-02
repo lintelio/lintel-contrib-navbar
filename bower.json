@@ -1,0 +1,36 @@
+{
+  "name": "lintel-navbar",
+  "version": "0.1.0",
+  "description": "Navbar for lintel.",
+  "homepage": "https://github.com/lintelio/lintel-contrib-navbar",
+  "repository": "https://github.com/lintelio/lintel-contrib-navbar.git",
+  "keywords": [
+    "lintelmodule",
+    "lintel"
+  ],
+  "main": [
+    "sass/navbar.sass",
+    "dist/navbar.min.css",
+    "dist/navbar.min.js"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": ">= 1.9.2",
+    "lintel": "~0.1.7"
+  },
+  "devDependencies": {
+    "lintel-contrib-dropdowns": "~0.1.4",
+    "lintel-contrib-buttons": "~0.1.2"
+  },
+  "ignore": [
+    "/.*",
+    "sass/lintel-core-loader.scss"
+  ],
+  "authors": [
+    {
+      "name": "Marius Craciunoiu",
+      "email": "",
+      "url": "mariusc23.com"
+    }
+  ]
+}
