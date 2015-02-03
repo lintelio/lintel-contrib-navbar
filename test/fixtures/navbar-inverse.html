@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="../../bower_components/lintel/dist/lintel.css">
     <link rel="stylesheet" href="../../bower_components/lintel-contrib-buttons/dist/buttons.css">
     <link rel="stylesheet" href="../../bower_components/lintel-contrib-dropdowns/dist/dropdowns.css">
@@ -10,11 +9,11 @@
     <script src="../../bower_components/lintel-contrib-dropdowns/dist/dropdowns.js"></script>
     <script src="../../dist/navbar.js"></script>
   </head>
-  <body class="has-navbar-left has-navbar-collapsed">
+  <body>
 
-    <nav class="navbar navbar-inverse navbar-left navbar-mobile">
+    <nav class="navbar navbar-inverse navbar-top navbar-mobile">
       <div class="navbar-brand">
-        <a href="#" class="navbar-toggle" data-toggle="navbar" aria-label="Open main menu">
+        <a href="#" class="navbar-toggle" aria-label="Open main menu">
           <div class="navbar-toggle-bar" aria-hidden="true"></div>
         </a>
         <a href="/" class="navbar-brand-link">
@@ -24,30 +23,27 @@
       </div>
     </nav>
 
-    <nav class="navbar navbar-inverse navbar-left" id="navbar">
+    <nav class="navbar navbar-inverse navbar-top">
       <div class="navbar-brand">
         <a href="#" class="navbar-toggle" aria-label="Close main menu">
           <div class="navbar-toggle-bar" aria-hidden="true"></div>
         </a>
         <a href="/" class="navbar-brand-link">
-          <h1 class="navbar-title">Lintel</h1>
-          <img class="navbar-logo" src="http://placehold.it/44x40" alt="Logo">
+          <h1 class="navbar-title visible-sr">Lintel</h1>
+          <img class="navbar-logo" src="http://placehold.it/100x35" alt="Logo">
         </a>
       </div>
       <ul class="navbar-list">
         <li>
-          <a href="#">
-            <i class="fa fa-home navbar-list-icon" aria-hidden="true"></i> <span class="navbar-tooltip">Home</span>
-          </a>
+          <a href="#">Home</a>
         </li>
         <li class="active">
-          <a href="#">
-            <i class="fa fa-user navbar-list-icon" aria-hidden="true"></i> <span class="navbar-tooltip">Profile</span>
-          </a>
+          <a href="#">Profile</a>
         </li>
         <li class="btn-group">
           <a href="#" data-toggle="dropdown" type="button" aria-expanded="false">
-            <i class="fa fa-tasks navbar-list-icon" aria-hidden="true"></i> <span class="navbar-tooltip">Dropdown <span class="btn-caret" aria-hidden="true"></span></span>
+            Dropdown
+            <span class="btn-caret" aria-hidden="true"></span>
           </a>
           <ul class="dropdown navbar-dropdown" role="menu">
             <li><a href="#">Action 1</a></li>
@@ -58,25 +54,13 @@
       </ul>
       <ul class="navbar-list navbar-list-right">
         <li>
-          <a href="#">
-            <i class="fa fa-sign-in navbar-list-icon" aria-hidden="true"></i> <span class="navbar-tooltip">Log In</span>
-          </a>
+          <a href="#" class="btn btn-success btn-sm">Sign Up</a>
         </li>
         <li>
-          <a href="#" data-toggle="navbar-collapse">
-            <i class="fa fa-arrow-right navbar-list-icon" aria-hidden="true"></i>
-          </a>
+          <a href="#">Log In</a>
         </li>
       </ul>
     </nav>
-
-    <script>
-      $('#navbar').navbar({
-        toggle: false,
-        collapsible: true,
-        toggleCollapse: false
-      });
-    </script>
 
     <p class="pad">Body</p>
 

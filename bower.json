@@ -20,7 +20,8 @@
   },
   "devDependencies": {
     "lintel-contrib-dropdowns": "~0.1.4",
-    "lintel-contrib-buttons": "~0.1.2"
+    "lintel-contrib-buttons": "~0.1.2",
+    "font-awesome": "~4.3.0"
   },
   "ignore": [
     "/.*",

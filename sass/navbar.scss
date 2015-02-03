@@ -5,91 +5,60 @@
 @import 'navbar-functions';
 @import 'navbar-mixins';
 
+
+// Common
+// ------
 .navbar {
   @include clearfix;
   @include navbar-theme(
     $bg: $navbar-bg,
     $bg-hover: $navbar-bg-hover,
     $bg-active: $navbar-bg-active,
+    $bg-brand: $navbar-bg-brand,
     $border: $navbar-border,
+    $border-brand: $navbar-border-brand,
     $text: $navbar-text,
     $link: $navbar-link,
     $link-hover: $navbar-link-hover,
     $link-active: $navbar-link-active
   );
-  color: $navbar-text;
+  transition: top $navbar-animate ease-in-out,
+              bottom $navbar-animate ease-in-out,
+              left $navbar-animate ease-in-out,
+              width $navbar-animate ease-in-out;
   z-index: $navbar-z-index;
 }
 
-
-// Navbar Brand
-// ------------
-%navbar-y {
-  .navbar-brand {
-    display: inline-block;
-    margin-right: $navbar-padding-x;
-    vertical-align: middle;
-  }
+// Modifiers
+.navbar-fixed {
+  position: fixed;
+  width: 100%;
 }
 
-%navbar-x {
-  .navbar-brand {
-    display: block;
-    // height: auto;
-    // margin: 0;
-    overflow-x: hidden;
-    padding-left: $navbar-padding-x;
-    padding-right: $navbar-padding-x;
-    // position: static;
-    text-align: left;
-    white-space: nowrap;
-    // width: auto;
-  }
-
-  .navbar-brand-reverse {
-    direction: rtl; // hack to reverse order
-    width: $navbar-expanded-width - ($navbar-padding-x * 2);
-  }
+// Brand
+.navbar-brand {
+  border-bottom: 1px solid transparent;
+  line-height: $navbar-height - 4;
+  vertical-align: middle;
 }
 
-
-// Navbar Title
-// ------------
-%navbar-y .navbar-title {
-  @extend .visible-sr;
+.navbar-brand-link {
+  unicode-bidi: bidi-override;
+  text-decoration: none;
 }
 
-%navbar-x .navbar-title {
-  display: inline-block;
+// Title
+.navbar-title {
   color: inherit;
-  font-size: 1em;
-  // transition: none;
-  white-space: nowrap;
 }
 
-
-// Navbar Logo
-// -----------
+// Logo
 .navbar-logo {
   max-width: 100%;
   vertical-align: middle;
 }
 
-%navbar-y {
-  .navbar-logo {
-    display: block;
-  }
-}
-
-%navbar-x {
-  .navbar-logo {
-    padding: $navbar-padding-y 0;
-  }
-}
-
-
-// Navbar List
-// -----------
+// List
 .navbar-list {
   list-style: none;
   margin: 0;
@@ -103,91 +72,10 @@
   }
 }
 
-%navbar-y {
-  .navbar-list {
-    display: inline-block;
-
-    > li {
-      display: inline-block;
-      vertical-align: middle;
-
-      &:not(.btn) {
-        padding: $navbar-list-padding-y $navbar-list-padding-x;
-      }
-    }
-  }
-
-  .navbar-list-left {
-    display: inline-block;
-  }
-
-  .navbar-list-right {
-    float: right;
-  }
-}
-
-%navbar-x {
-  .navbar-list {
-    > li {
-      display: block; // if .btn-group
-      white-space: nowrap;
-
-      > a {
-        line-height: $navbar-list-height;
-        padding-left: $navbar-list-padding-x;
-        padding-right: $navbar-list-padding-x;
-      }
-    }
-  }
-}
-
-
-// Navbar Dropdown
-// ---------------
-%navbar-y .dropdown {
+// Dropdown
+.navbar-dropdown {
   box-shadow: none;
   margin-top: 1px;
-  border-top: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-
-// Navbar Positioning
-// ------------------
-%navbar-y {
-  padding-left: $navbar-padding-x;
-  padding-right: $navbar-padding-x;
-}
-
-%navbar-x {
-  height: 100%;
-  position: fixed;
-  top: 0;
-  transition: width $animate-slow ease-in-out;
-  width: $navbar-expanded-width;
-}
-
-.navbar-top {
-  @extend %navbar-y;
-  border-bottom: 1px solid $navbar-border;
-}
-
-.navbar-right {
-  @extend %navbar-x;
-  border-left: 1px solid $navbar-border;
-  right: 0;
-}
-
-.navbar-bottom {
-  @extend %navbar-y;
-  border-top: 1px solid $navbar-border;
-}
-
-.navbar-left {
-  @extend %navbar-x;
-  border-right: 1px solid $navbar-border;
-  left: 0;
 }
 
 
@@ -198,7 +86,9 @@
     $bg: $navbar-inverse-bg,
     $bg-hover: $navbar-inverse-bg-hover,
     $bg-active: $navbar-inverse-bg-active,
+    $bg-brand: $navbar-inverse-bg-brand,
     $border: $navbar-inverse-border,
+    $border-brand: $navbar-inverse-border-brand,
     $text: $navbar-inverse-text,
     $link: $navbar-inverse-link,
     $link-hover: $navbar-inverse-link-hover,
@@ -207,19 +97,110 @@
 }
 
 
-// Expand / Collapse
-// -----------------
-@if $navbar-collapsible == true {
+// Scroll to hide
+// --------------
+@if $navbar-scrollable == true {
+  .navbar-up.navbar-mobile {
+    top: -100%;
+  }
+
+  @media screen and (min-width: $navbar-breakpoint-min) {
+    .navbar-up.navbar-top {
+      top: -100%;
+    }
+  }
+}
+
+
+// Navbar Mobile
+// -------------
+.navbar-mobile {
+  display: none;
+}
+
+@media screen and (max-width: $navbar-breakpoint-max) {
+  .navbar:not(.navbar-mobile):not(.active) {
+    left: -$navbar-expanded-width;
+  }
+
+  .navbar-mobile.navbar-mobile {
+    display: block;
+    height: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: $navbar-z-index + 5;
+  }
+}
+
+
+// Top and Bottom
+// --------------
+@media screen and (min-width: $navbar-breakpoint-min) {
+  .navbar-top,
+  .navbar-bottom {
+    @include navbar-y;
+  }
+
+  .navbar-top {
+    border-bottom: 1px solid $navbar-border;
+    top: 0;
+  }
+
+  .navbar-bottom {
+    border-top: 1px solid $navbar-border;
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: $navbar-breakpoint-max) {
+  .navbar-top,
+  .navbar-bottom {
+    @include navbar-x;
+  }
+
+  .navbar-top {
+    border-right: 1px solid $navbar-border;
+    left: 0;
+  }
+
+  .navbar-bottom {
+    border-left: 1px solid $navbar-border;
+    right: 0;
+  }
+}
+
+
+// Left and Right
+// --------------
+@if $navbar-x == true {
+  .navbar-right,
+  .navbar-left {
+    @include navbar-x;
+  }
+
+  .navbar-left {
+    border-right: 1px solid $navbar-border;
+    left: 0;
+  }
+
+  .navbar-right {
+    border-left: 1px solid $navbar-border;
+    right: 0;
+  }
+}
+
+@if $navbar-x == true and $navbar-collapsible == true {
   // Body
   .has-navbar-left {
-    transition: padding-left $animate-slow ease-in-out;
+    transition: padding-left $navbar-animate ease-in-out;
   }
 
   .has-navbar-right {
-    transition: padding-right $animate-slow ease-in-out;
+    transition: padding-right $navbar-animate ease-in-out;
   }
 
-  @media screen and (min-width: $screen-sm-min) {
+  @media screen and (min-width: $navbar-breakpoint-min) {
     .has-navbar-expanded {
       padding-left: $navbar-expanded-width;
     }
@@ -234,9 +215,9 @@
   }
 
   // Tooltips
-  @media screen and (min-width: $screen-sm-min) {
+  @media screen and (min-width: $navbar-breakpoint-min) {
     .navbar-tooltip {
-      transition: opacity $animate-slow ease-in-out;
+      transition: opacity $navbar-animate ease-in-out;
     }
 
     .has-navbar-collapsed {
@@ -246,10 +227,9 @@
         position: absolute;
       }
 
-      a:hover > .navbar-tooltip {
-        background: transparentize($navbar-inverse-bg, 0.2);
+      a:hover > .navbar-tooltip,
+      .open > a > .navbar-tooltip {
         border-radius: $border-radius-base;
-        color: $navbar-inverse-link-hover;
         left: 100%;
         margin-left: $cushion-x-sm;
         opacity: 1;
@@ -264,33 +244,33 @@
         position: static;
       }
     }
-
-    // Title
-    .has-navbar-collapsed  .navbar-title {
-      position: absolute;
-    }
-
-    .has-navbar-collapsing .navbar-title {
-      line-height: 1;
-    }
   }
+}
 
 
-  // Animations
-  // ----------
-  @-webkit-keyframes navbarBrandIn { from { margin-left: -30px; opacity: 0; } to { opacity: 1; } }
-  @keyframes navbarBrandIn         { from { margin-left: -30px; opacity: 0; } to { opacity: 1; } }
+// Mobile Toggle
+// -------------
+.navbar-toggle {
+  border: 1px solid $navbar-border;
+  border-radius: $border-radius-base;
+  display: inline-block;
+  margin-right: $navbar-padding-x;
+  padding: ($navbar-toggle-padding-y - $navbar-toggle-bar-margin-y) $navbar-toggle-padding-x;
+  vertical-align: middle;
+}
 
-  @-webkit-keyframes navbarIn {
-    0%   { top: 200px; opacity: 0; }
-    40%  { top: -10px; }
-    80%  { top: 5px; }
-    100% { top: 0; opacity: 1; }
-  }
-  @keyframes navbarIn     {
-    0%   { top: 200px; opacity: 0; }
-    40%  { top: -10px; }
-    80%  { top: 5px; }
-    100% { top: 0; opacity: 1; }
+.navbar-toggle-bar,
+.navbar-toggle-bar:before,
+.navbar-toggle-bar:after {
+  content: '';
+  display: block;
+  margin-top: $navbar-toggle-bar-margin-y;
+  margin-bottom: $navbar-toggle-bar-margin-y;
+  width: 1.5em;
+}
+
+@media screen and (min-width: $navbar-breakpoint-min) {
+  .navbar-toggle {
+    display: none;
   }
 }

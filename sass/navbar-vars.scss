@@ -2,46 +2,62 @@
 // https://github.com/lintelio/lintel/blob/master/CONTRIBUTING.md
 
 // Global
-$navbar-padding-y:           $cushion-y-md !default;
-$navbar-padding-x:           $cushion-x-md !default;
+$navbar-x:                    true !default;
+$navbar-collapsible:          true !default;
+$navbar-scrollable:           true !default;
 
-$navbar-margin-y:            $cushion-y-lg !default;
+$navbar-collapsed-width:      70px !default;
+$navbar-expanded-width:       360px !default;
 
-$navbar-collapsible:         true !default;
-$navbar-logo:                true !default;
-$navbar-height:              50px !default;
+$navbar-breakpoint-min:       $screen-sm-min !default;
+$navbar-breakpoint-max:       ($navbar-breakpoint-min - 1) !default;
 
-$navbar-collapsed-width:     70px !default;
-$navbar-expanded-width:      360px !default;
+$navbar-padding-y:            $cushion-y-md !default;
+$navbar-padding-x:            $cushion-x-md !default;
 
-$navbar-z-index:             $z-index-xl !default;
+$navbar-animate:              $animate-base !default;
+$navbar-height:               50px !default;
+$navbar-z-index:              $z-index-xl !default;
+
+// Title
+$navbar-title-font-size:      1em !default;
 
 // List
-$navbar-list-padding-y:      ($navbar-height  - ($font-size-base * $line-height-base)) / 2 !default;
-$navbar-list-padding-x:      $navbar-padding-x !default;
+$navbar-list-padding-y:       ($navbar-height  - ($font-size-base * $line-height-base)) / 2 !default;
+$navbar-list-padding-x:       $navbar-padding-x !default;
 
-$navbar-list-height:         50px;
+$navbar-list-height:          $navbar-height !default;
+
+// Toggle
+$navbar-toggle-bar-margin-y:  4px !default;
+$navbar-toggle-bar-width:     2px !default;
+$navbar-toggle-padding-y:     8px !default;
+$navbar-toggle-padding-x:     ($navbar-toggle-padding-y - 1) !default;
 
 // Base
-$navbar-bg:                  $bg-light !default;
-$navbar-bg-hover:            darken($navbar-bg, 2.5%) !default;
-$navbar-bg-active:           $navbar-bg-hover !default;
+$navbar-bg:                   $bg-light !default;
+$navbar-bg-hover:             shade($navbar-bg, 96.66%) !default;
+$navbar-bg-active:            $navbar-bg-hover !default;
+$navbar-bg-brand:             $navbar-bg !default;
 
-$navbar-border:              $border-base !default;
-$navbar-text:                $text-base !default;
+$navbar-border:               $border-base !default;
+$navbar-border-brand:         $navbar-border !default;
+$navbar-text:                 $text-base !default;
 
-$navbar-link:                $navbar-text !default;
-$navbar-link-hover:          $text-link !default;
-$navbar-link-active:         $navbar-link-hover !default;
+$navbar-link:                 $navbar-text !default;
+$navbar-link-hover:           $text-link !default;
+$navbar-link-active:          $navbar-link-hover !default;
 
 // Inverse
-$navbar-inverse-bg:          $gray-dark !default;
-$navbar-inverse-bg-hover:    darken($navbar-inverse-bg, 10%) !default;
-$navbar-inverse-bg-active:   $navbar-inverse-bg-hover !default;
+$navbar-inverse-bg:           $gray-dark !default;
+$navbar-inverse-bg-hover:     shade($navbar-inverse-bg, 70%) !default;
+$navbar-inverse-bg-active:    $navbar-inverse-bg-hover !default;
+$navbar-inverse-bg-brand:     tint($navbar-inverse-bg, 90%) !default;
 
-$navbar-inverse-border:      darken($navbar-inverse-bg, 10%) !default;
-$navbar-inverse-text:        $text-light !default;
+$navbar-inverse-border:       shade($navbar-inverse-bg, 70%) !default;
+$navbar-inverse-border-brand: shade($navbar-inverse-bg, 90%) !default;
+$navbar-inverse-text:         $text-light !default;
 
-$navbar-inverse-link:        $navbar-inverse-text !default;
-$navbar-inverse-link-hover:  $text-lightest !default;
-$navbar-inverse-link-active: $navbar-inverse-link-hover !default;
+$navbar-inverse-link:         $navbar-inverse-text !default;
+$navbar-inverse-link-hover:   $text-lightest !default;
+$navbar-inverse-link-active:  $navbar-inverse-link-hover !default;

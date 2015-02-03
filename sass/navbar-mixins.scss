@@ -1,11 +1,51 @@
 // Please try to maintain the same code style as outlined here:
 // https://github.com/lintelio/lintel/blob/master/CONTRIBUTING.md
 
+@mixin navbar-toggle(
+  $border,
+  $link,
+  $link-hover: $link,
+  $link-active: $link-hover
+) {
+  .navbar-toggle {
+    border: 1px solid $border;
+
+    @if $link-hover != $link {
+      &:hover {
+        .navbar-toggle-bar,
+        .navbar-toggle-bar:before,
+        .navbar-toggle-bar:after {
+          border-color: $link-hover;
+        }
+      }
+    }
+    @if $link-active != $link-hover {
+      &:active {
+        .navbar-toggle-bar,
+        .navbar-toggle-bar:before,
+        .navbar-toggle-bar:after {
+          border-color: $link-active;
+        }
+      }
+    }
+  }
+
+  .navbar-toggle-bar,
+  .navbar-toggle-bar:before,
+  .navbar-toggle-bar:after {
+    border-top: 2px solid $link;
+  }
+}
+
+
 @mixin navbar-theme(
   $bg: $navbar-bg,
   $bg-hover: $bg,
   $bg-active: $bg,
+  $bg-brand: $bg,
+  $bg-brand-hover: $bg,
   $border: $navbar-border,
+  $border-brand: $border,
   $text: $navbar-text,
   $link: $navbar-link,
   $link-hover: $navbar-link-hover,
@@ -14,6 +54,24 @@
   background: $bg;
   border-color: $border;
   color: $text;
+
+  .navbar-brand {
+    @if $bg-brand != $bg {
+      background: $bg-brand;
+    }
+    border-color: $border;
+
+    > a {
+      color: $link;
+
+      @if $link != $link-hover {
+        &:hover,
+        &:focus {
+          color: $link-hover;
+        }
+      }
+    }
+  }
 
   .navbar-list {
     > li {
@@ -39,7 +97,7 @@
     }
   }
 
-  &%navbar-x .dropdown {
+  .navbar-dropdown {
     background: $bg;
     border-color: $border;
 
@@ -56,19 +114,133 @@
     }
   }
 
-  .navbar-top {
-    border-bottom: 1px solid $border;
+  @if $navbar-x == true {
+    @if $navbar-collapsible == true {
+      @media screen and (min-width: $screen-sm-min) {
+        .has-navbar-collapsed & {
+          a:hover > .navbar-tooltip.navbar-tooltip,
+          .open > a > .navbar-tooltip {
+            background: $bg;
+            background: transparentize($bg, 0.2);
+            border: 1px solid $border;
+            margin-top: -1px;
+            color: $link-hover;
+          }
+        }
+      }
+    }
   }
 
-  .navbar-right {
-    border-left: 1px solid $border;
+  @include navbar-toggle(
+    $border: $border,
+    $link: $link,
+    $link-hover: $link-hover,
+    $link-active: $link-active
+  );
+}
+
+
+@mixin navbar-y() {
+  padding-left: $navbar-padding-x;
+  padding-right: $navbar-padding-x;
+
+  // Brand
+  .navbar-brand {
+    border-bottom-color: transparent; // override theme
+    display: inline-block;
+    margin-right: $navbar-padding-x;
   }
 
-  .navbar-bottom {
-    border-top: 1px solid $border;
+  // Title
+  .navbar-title {
+    @extend .visible-sr;
   }
 
-  .navbar-left {
-    border-right: 1px solid $border;
+  // Logo
+  .navbar-logo {
+    display: block;
+  }
+
+  // List
+  .navbar-list {
+    display: inline-block;
+
+    > li {
+      display: inline-block;
+      vertical-align: middle;
+
+      > a:not(.btn) {
+        padding: $navbar-list-padding-y $navbar-list-padding-x;
+      }
+    }
+  }
+
+  .navbar-list-right {
+    float: right;
+  }
+
+  // Dropdown
+  .navbar-dropdown {
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+
+@mixin navbar-x() {
+  height: 100%;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  width: $navbar-expanded-width;
+
+  // Brand
+  .navbar-brand {
+    height: $navbar-height + 1; // +1 for border
+    overflow-x: hidden;
+    padding-left: $navbar-padding-x;
+    padding-right: $navbar-padding-x;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .navbar-brand-link {
+    direction: rtl; // hack to reverse order
+    text-decoration: none;
+    width: $navbar-expanded-width - ($navbar-padding-x * 2);
+  }
+
+  // Title
+  .navbar-title {
+    display: inline-block;
+    margin: 0 $navbar-padding-x;
+    font-size: $navbar-title-font-size;
+    white-space: nowrap;
+  }
+
+  // List
+  .navbar-list {
+    > li {
+      display: block; // if .btn-group
+      white-space: nowrap;
+
+      > a:not(.btn) {
+        line-height: $navbar-list-height;
+        padding-left: $navbar-list-padding-x;
+        padding-right: $navbar-list-padding-x;
+      }
+
+      .btn {
+        margin: $navbar-list-padding-y $navbar-list-padding-x;
+      }
+    }
+  }
+
+  .navbar-list-icon {
+    font-size: 1.2em;
+    text-align: center;
+    margin-right: -$navbar-padding-x;
+    width: $navbar-collapsed-width - ($navbar-padding-x * 2);
   }
 }
