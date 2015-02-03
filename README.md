@@ -1,10 +1,10 @@
-lintel-navbar
+lintel-contrib-navbar
 =====================
 
 > Navbar for lintel.
 
-[![npm](https://img.shields.io/npm/v/lintel-navbar.svg)](https://www.npmjs.com/package/lintel-navbar)
-[![Bower](https://img.shields.io/bower/v/lintel-navbar.svg)](https://github.com/lintelio/lintel-contrib-navbar)
+[![npm](https://img.shields.io/npm/v/lintel-contrib-navbar.svg)](https://www.npmjs.com/package/lintel-contrib-navbar)
+[![Bower](https://img.shields.io/bower/v/lintel-contrib-navbar.svg)](https://github.com/lintelio/lintel-contrib-navbar)
 
 
 ## Getting Started
@@ -13,19 +13,19 @@ This module requires Lintel.
 If you haven't used [Lintel](http://lintel.io/) before, be sure to check out the [Getting Started](http://lintel.io/getting-started) guide, as it explains how to install and use this module. Once you're familiar with that process, you may install this module with this command:
 
 ```shell
-bower install lintel-navbar --save
+bower install lintel-contrib-navbar --save
 ```
 
 Once the module has been installed, you will have to load it in your main SASS file:
 
 ```scss
-@import "bower_components/lintel-navbar/sass/navbar.scss"
+@import "bower_components/lintel-contrib-navbar/sass/navbar.scss"
 ```
 
 This module also includes a JavaScript component, which you will have to load separately.
 
 ```html
-<script src="bower_components/lintel-navbar/dist/navbar.min.js" type="text/javascript"></script>
+<script src="bower_components/lintel-contrib-navbar/dist/navbar.min.js" type="text/javascript"></script>
 ```
 
 You can use [wiredep](https://github.com/taptapship/wiredep) or [grunt-wiredep](https://github.com/stephenplusplus/grunt-wiredep) to automatically inject files in your build process.
