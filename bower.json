@@ -1,6 +1,6 @@
 {
   "name": "lintel-contrib-navbar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Navbar for lintel.",
   "homepage": "https://github.com/lintelio/lintel-contrib-navbar",
   "repository": "https://github.com/lintelio/lintel-contrib-navbar.git",
@@ -9,7 +9,7 @@
     "lintel"
   ],
   "main": [
-    "sass/navbar.sass",
+    "sass/navbar.scss",
     "dist/navbar.min.css",
     "dist/navbar.min.js"
   ],
