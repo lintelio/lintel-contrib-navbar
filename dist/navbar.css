@@ -38,8 +38,7 @@
       background: rgba(251, 251, 251, 0.8);
       border: 1px solid #ececec;
       margin-top: -1px;
-      color: #4b77be; }
- }
+      color: #4b77be; } }
   .navbar .navbar-toggle {
     border: 1px solid #ececec; }
     .navbar .navbar-toggle:hover .navbar-toggle-bar, .navbar .navbar-toggle:hover .navbar-toggle-bar:before, .navbar .navbar-toggle:hover .navbar-toggle-bar:after {
@@ -79,55 +78,12 @@
   box-shadow: none;
   margin-top: 1px; }
 
-.navbar-inverse {
-  background: #333333;
-  border-color: #232323;
-  color: #868686; }
-  .navbar-inverse .navbar-brand {
-    background: #474747;
-    border-color: #232323; }
-    .navbar-inverse .navbar-brand > a {
-      color: #868686; }
-      .navbar-inverse .navbar-brand > a:hover, .navbar-inverse .navbar-brand > a:focus {
-        color: #f9f9f9; }
-  .navbar-inverse .navbar-list > li > a:not(.btn) {
-    color: #868686; }
-    .navbar-inverse .navbar-list > li > a:not(.btn):hover, .navbar-inverse .navbar-list > li > a:not(.btn):focus {
-      background: #232323;
-      color: #f9f9f9; }
-  .navbar-inverse .navbar-list > li.active > a:not(.btn), .navbar-inverse .navbar-list > li.open > a:not(.btn) {
-    background: #232323;
-    color: #f9f9f9; }
-  .navbar-inverse .navbar-dropdown {
-    background: #333333;
-    border-color: #232323; }
-    .navbar-inverse .navbar-dropdown > li > a {
-      color: #868686; }
-      .navbar-inverse .navbar-dropdown > li > a:hover, .navbar-inverse .navbar-dropdown > li > a:focus {
-        background: #232323;
-        color: #f9f9f9; }
-  @media screen and (min-width: 480px) {
-    .has-navbar-collapsed .navbar-inverse a:hover > .navbar-tooltip.navbar-tooltip, .has-navbar-collapsed .navbar-inverse .open > a > .navbar-tooltip {
-      background: #333333;
-      background: rgba(51, 51, 51, 0.8);
-      border: 1px solid #232323;
-      margin-top: -1px;
-      color: #f9f9f9; }
- }
-  .navbar-inverse .navbar-toggle {
-    border: 1px solid #232323; }
-    .navbar-inverse .navbar-toggle:hover .navbar-toggle-bar, .navbar-inverse .navbar-toggle:hover .navbar-toggle-bar:before, .navbar-inverse .navbar-toggle:hover .navbar-toggle-bar:after {
-      border-color: #f9f9f9; }
-  .navbar-inverse .navbar-toggle-bar, .navbar-inverse .navbar-toggle-bar:before, .navbar-inverse .navbar-toggle-bar:after {
-    border-top: 2px solid #868686; }
-
 .navbar-up.navbar-mobile {
   top: -100%; }
 
 @media screen and (min-width: 480px) {
   .navbar-up.navbar-top {
-    top: -100%; }
- }
+    top: -100%; } }
 
 .navbar-mobile {
   display: none; }
@@ -135,15 +91,13 @@
 @media screen and (max-width: 479px) {
   .navbar:not(.navbar-mobile):not(.active) {
     left: -360px; }
-
   .navbar-mobile.navbar-mobile {
     display: block;
     height: auto;
     left: 0;
     right: 0;
     width: 100%;
-    z-index: 1205; }
- }
+    z-index: 1205; } }
 
 @media screen and (min-width: 480px) {
   .navbar-top, .navbar-bottom {
@@ -168,15 +122,12 @@
       border-top: 0;
       border-top-left-radius: 0;
       border-top-right-radius: 0; }
-
   .navbar-top {
     border-bottom: 1px solid #ececec;
     top: 0; }
-
   .navbar-bottom {
     border-top: 1px solid #ececec;
-    bottom: 0; }
- }
+    bottom: 0; } }
 
 @media screen and (max-width: 479px) {
   .navbar-top, .navbar-bottom {
@@ -215,15 +166,12 @@
       text-align: center;
       margin-right: -12px;
       width: 46px; }
-
   .navbar-top {
     border-right: 1px solid #ececec;
     left: 0; }
-
   .navbar-bottom {
     border-left: 1px solid #ececec;
-    right: 0; }
- }
+    right: 0; } }
 
 .navbar-right, .navbar-left {
   height: 100%;
@@ -281,18 +229,15 @@
 @media screen and (min-width: 480px) {
   .has-navbar-expanded {
     padding-left: 360px; }
-
   .has-navbar-collapsed {
     padding-left: 70px; }
     .has-navbar-collapsed .navbar {
-      width: 70px; }
- }
+      width: 70px; } }
 
 @media screen and (min-width: 480px) {
   .navbar-tooltip {
     -webkit-transition: opacity 0.5s ease-in-out;
             transition: opacity 0.5s ease-in-out; }
-
   .has-navbar-collapsed .navbar-tooltip {
     left: -1000px;
     opacity: 0;
@@ -308,8 +253,7 @@
     white-space: nowrap; }
   .has-navbar-collapsed.has-navbar-collapsing .navbar-tooltip {
     left: auto;
-    position: static; }
- }
+    position: static; } }
 
 .navbar-toggle {
   border: 1px solid #ececec;
@@ -328,5 +272,45 @@
 
 @media screen and (min-width: 480px) {
   .navbar-toggle {
-    display: none; }
- }
+    display: none; } }
+
+.navbar-inverse {
+  background: #333333;
+  border-color: #232323;
+  color: #868686; }
+  .navbar-inverse .navbar-brand {
+    background: #474747;
+    border-color: #2d2d2d; }
+    .navbar-inverse .navbar-brand > a {
+      color: #868686; }
+      .navbar-inverse .navbar-brand > a:hover, .navbar-inverse .navbar-brand > a:focus {
+        color: #f9f9f9; }
+  .navbar-inverse .navbar-list > li > a:not(.btn) {
+    color: #868686; }
+    .navbar-inverse .navbar-list > li > a:not(.btn):hover, .navbar-inverse .navbar-list > li > a:not(.btn):focus {
+      background: #232323;
+      color: #f9f9f9; }
+  .navbar-inverse .navbar-list > li.active > a:not(.btn), .navbar-inverse .navbar-list > li.open > a:not(.btn) {
+    background: #232323;
+    color: #f9f9f9; }
+  .navbar-inverse .navbar-dropdown {
+    background: #333333;
+    border-color: #232323; }
+    .navbar-inverse .navbar-dropdown > li > a {
+      color: #868686; }
+      .navbar-inverse .navbar-dropdown > li > a:hover, .navbar-inverse .navbar-dropdown > li > a:focus {
+        background: #232323;
+        color: #f9f9f9; }
+  @media screen and (min-width: 480px) {
+    .has-navbar-collapsed .navbar-inverse a:hover > .navbar-tooltip.navbar-tooltip, .has-navbar-collapsed .navbar-inverse .open > a > .navbar-tooltip {
+      background: #333333;
+      background: rgba(51, 51, 51, 0.8);
+      border: 1px solid #232323;
+      margin-top: -1px;
+      color: #f9f9f9; } }
+  .navbar-inverse .navbar-toggle {
+    border: 1px solid #232323; }
+    .navbar-inverse .navbar-toggle:hover .navbar-toggle-bar, .navbar-inverse .navbar-toggle:hover .navbar-toggle-bar:before, .navbar-inverse .navbar-toggle:hover .navbar-toggle-bar:after {
+      border-color: #f9f9f9; }
+  .navbar-inverse .navbar-toggle-bar, .navbar-inverse .navbar-toggle-bar:before, .navbar-inverse .navbar-toggle-bar:after {
+    border-top: 2px solid #868686; }

@@ -79,24 +79,6 @@
 }
 
 
-// Themes
-// ------
-.navbar-inverse {
-  @include navbar-theme(
-    $bg: $navbar-inverse-bg,
-    $bg-hover: $navbar-inverse-bg-hover,
-    $bg-active: $navbar-inverse-bg-active,
-    $bg-brand: $navbar-inverse-bg-brand,
-    $border: $navbar-inverse-border,
-    $border-brand: $navbar-inverse-border-brand,
-    $text: $navbar-inverse-text,
-    $link: $navbar-inverse-link,
-    $link-hover: $navbar-inverse-link-hover,
-    $link-active: $navbar-inverse-link-active
-  );
-}
-
-
 // Scroll to hide
 // --------------
 @if $navbar-scrollable == true {
@@ -273,4 +255,22 @@
   .navbar-toggle {
     display: none;
   }
+}
+
+
+// Themes
+// ------
+.navbar-inverse {
+  @include navbar-theme(
+    $bg: $navbar-inverse-bg,
+    $bg-hover: $navbar-inverse-bg-hover,
+    $bg-active: $navbar-inverse-bg-active,
+    $bg-brand: $navbar-inverse-bg-brand,
+    $border: $navbar-inverse-border,
+    $border-brand: $navbar-inverse-border-brand,
+    $text: $navbar-inverse-text,
+    $link: $navbar-inverse-link,
+    $link-hover: $navbar-inverse-link-hover,
+    $link-active: $navbar-inverse-link-active
+  );
 }

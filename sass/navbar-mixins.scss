@@ -59,7 +59,7 @@
     @if $bg-brand != $bg {
       background: $bg-brand;
     }
-    border-color: $border;
+    border-color: $border-brand;
 
     > a {
       color: $link;
