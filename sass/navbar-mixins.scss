@@ -80,12 +80,8 @@
 
         &:hover,
         &:focus {
-          @if $bg != $bg-hover {
-            background: $bg-hover;
-          }
-          @if $link != $link-hover {
-            color: $link-hover;
-          }
+          background: $bg-hover;
+          color: $link-hover;
         }
       }
 
