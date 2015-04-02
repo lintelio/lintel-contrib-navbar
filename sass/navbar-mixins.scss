@@ -146,9 +146,12 @@
 
   // Brand
   .navbar-brand {
-    border-bottom-color: transparent; // override theme
     display: inline-block;
     margin-right: $navbar-padding-x;
+  }
+
+  .navbar-brand.navbar-brand {
+    border-bottom-color: transparent; // override theme
   }
 
   // Title
